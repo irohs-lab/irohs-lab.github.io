@@ -1,4 +1,7 @@
 import { useState, useEffect, useRef } from "react";
+import Loader from "./Loader";
+import { client } from './sanityClient'
+
 
 function useBreakpoint() {
   const [w, setW] = useState(typeof window !== "undefined" ? window.innerWidth : 1200);
@@ -41,36 +44,7 @@ const RESEARCH = [
   { icon: "⊕", title: "Distributed Learning", desc: "In domains where data is scattered across entities with privacy concerns, how can performant models be trained? Can synthetic data alleviate these concerns?", refs: ["ArXiv 2024", "ACM 2024", "ICML 2019"] },
 ];
 
-const PUBLICATIONS = [
-  { year: "2025", title: "Practical Black-Box Attacks on ML Systems in Physical-World Settings", venue: "ArXiv preprint", url: "https://arxiv.org/abs/2502.04248" },
-  { year: "2024", title: "Regulation and Compliance of Deployed Machine Learning Models", venue: "CHI 2024", url: "https://dl.acm.org/doi/full/10.1145/3613904.3642333" },
-  { year: "2024", title: "Reliability of Distributed Machine Learning Systems", venue: "ArXiv preprint", url: "https://arxiv.org/abs/2410.08432" },
-  { year: "2024", title: "Zero-Auxiliary-Knowledge Attacks in Privacy-Preserving ML", venue: "ACM KDD 2024", url: "https://dl.acm.org/doi/abs/10.1145/3639037" },
-  { year: "2023", title: "Machine Learning Models in Security-Critical Domains", venue: "KDD 2023", url: "https://dl.acm.org/doi/abs/10.1145/3580305.3599775" },
-  { year: "2022", title: "Kernel Machines for Interpretable and Robust Classification", venue: "NeurIPS 2022", url: "https://proceedings.neurips.cc/paper_files/paper/2022/hash/e1fa017a312368906411501bbd27a1d6-Abstract-Conference.html" },
-  { year: "2021", title: "Backdoor Attacks Against Deep Learning Systems in the Physical World", venue: "CVPR 2021", url: "https://openaccess.thecvf.com/content/CVPR2021/html/Wenger_Backdoor_Attacks_Against_Deep_Learning_Systems_in_the_Physical_World_CVPR_2021_paper.html" },
-  { year: "2019", title: "Byzantine-Robust Distributed SGD with Optimal Statistical Rates", venue: "ICML 2019", url: "https://proceedings.mlr.press/v97/bhagoji19a.html" },
-];
 
-const TEAM = [
-  { name: "Lab Director", role: "Principal Investigator · IIT Bombay", initials: "PI", color: "#2563c4" },
-  { name: "Rahul Kumar Yadav", role: "PhD · with Parthe Pandit", initials: "RY", color: "#16a34a" },
-  { name: "Nachiketa Patil", role: "MS by Research", initials: "NP", color: "#9333ea" },
-  { name: "Ritik", role: "MS by Research · with Arpit Agarwal", initials: "Ri", color: "#dc2626" },
-  { name: "Tunir Ghosh", role: "Pre-doc · with Parthe Pandit", initials: "TG", color: "#0891b2" },
-  { name: "Hari Krishna Sahoo", role: "Dual Degree", initials: "HK", color: "#d97706" },
-];
-
-const COLLABS = [
-  { name: "Prateek Mittal", inst: "Princeton University" },
-  { name: "Daniel Cullina", inst: "Penn State University" },
-  { name: "Ben Zhao", inst: "University of Chicago" },
-  { name: "Nick Feamster", inst: "University of Chicago" },
-  { name: "Isabela Parisio", inst: "King's College London" },
-  { name: "Deborah Olukan", inst: "King's College London" },
-  { name: "Danish Pruthi", inst: "Indian Institute of Science" },
-  { name: "Krishna Pillutla", inst: "IIT Madras" },
-];
 
 const BLUE = "#2563c4";
 const BLUE_LIGHT = "#e8eef9";
@@ -109,12 +83,65 @@ function Tag({ text }) {
     }}>{text}</span>
   );
 }
+const TEAM = [
+  { name: "Lab Director", role: "Principal Investigator · IIT Bombay", initials: "PI", color: "#2563c4" },
+  { name: "Rahul Kumar Yadav", role: "PhD · with Parthe Pandit", initials: "RY", color: "#16a34a" },
+  { name: "Nachiketa Patil", role: "MS by Research", initials: "NP", color: "#9333ea" },
+  { name: "Ritik", role: "MS by Research · with Arpit Agarwal", initials: "Ri", color: "#dc2626" },
+  { name: "Tunir Ghosh", role: "Pre-doc · with Parthe Pandit", initials: "TG", color: "#0891b2" },
+  { name: "Hari Krishna Sahoo", role: "Dual Degree", initials: "HK", color: "#d97706" },
+];
 
+const PUBLICATIONS = [
+  { year: "2025", title: "Practical Black-Box Attacks on ML Systems in Physical-World Settings", venue: "ArXiv preprint", url: "https://arxiv.org/abs/2502.04248" },
+  { year: "2024", title: "Regulation and Compliance of Deployed Machine Learning Models", venue: "CHI 2024", url: "https://dl.acm.org/doi/full/10.1145/3613904.3642333" },
+  { year: "2024", title: "Reliability of Distributed Machine Learning Systems", venue: "ArXiv preprint", url: "https://arxiv.org/abs/2410.08432" },
+  { year: "2024", title: "Zero-Auxiliary-Knowledge Attacks in Privacy-Preserving ML", venue: "ACM KDD 2024", url: "https://dl.acm.org/doi/abs/10.1145/3639037" },
+  { year: "2023", title: "Machine Learning Models in Security-Critical Domains", venue: "KDD 2023", url: "https://dl.acm.org/doi/abs/10.1145/3580305.3599775" },
+  { year: "2022", title: "Kernel Machines for Interpretable and Robust Classification", venue: "NeurIPS 2022", url: "https://proceedings.neurips.cc/paper_files/paper/2022/hash/e1fa017a312368906411501bbd27a1d6-Abstract-Conference.html" },
+  { year: "2021", title: "Backdoor Attacks Against Deep Learning Systems in the Physical World", venue: "CVPR 2021", url: "https://openaccess.thecvf.com/content/CVPR2021/html/Wenger_Backdoor_Attacks_Against_Deep_Learning_Systems_in_the_Physical_World_CVPR_2021_paper.html" },
+  { year: "2019", title: "Byzantine-Robust Distributed SGD with Optimal Statistical Rates", venue: "ICML 2019", url: "https://proceedings.mlr.press/v97/bhagoji19a.html" },
+];
+
+const COLLABS = [
+  { name: "Prateek Mittal", inst: "Princeton University" },
+  { name: "Daniel Cullina", inst: "Penn State University" },
+  { name: "Ben Zhao", inst: "University of Chicago" },
+  { name: "Nick Feamster", inst: "University of Chicago" },
+  { name: "Isabela Parisio", inst: "King's College London" },
+  { name: "Deborah Olukan", inst: "King's College London" },
+  { name: "Danish Pruthi", inst: "Indian Institute of Science" },
+  { name: "Krishna Pillutla", inst: "IIT Madras" },
+];
 /* ─── App ─── */
 export default function App() {
+ 
+useEffect(() => {
+  client.fetch(`*[_type == "teamMember"]`)
+    .then(data => { if (data.length) setTeam(data) })
+
+  client.fetch(`*[_type == "publication"] | order(year desc)`)
+    .then(data => { if (data.length) setPublications(data) })
+
+  client.fetch(`*[_type == "collaborator"]`)
+    .then(data => { if (data.length) setCollaborators(data) })
+}, [])
+  const [loaded, setLoaded] = useState(false);
   const { isMobile, isTablet } = useBreakpoint();
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [team, setTeam] = useState(TEAM)
+const [publications, setPublications] = useState(PUBLICATIONS)
+const [collaborators, setCollaborators] = useState(COLLABS)
+
+useEffect(() => {
+  client.fetch(`*[_type == "teamMember"]`)
+    .then(data => { if (data.length) setTeam(data) })
+  client.fetch(`*[_type == "publication"] | order(year desc)`)
+    .then(data => { if (data.length) setPublications(data) })
+  client.fetch(`*[_type == "collaborator"]`)
+    .then(data => { if (data.length) setCollaborators(data) })
+}, [])
 
   useEffect(() => {
     const fn = () => setScrolled(window.scrollY > 30);
@@ -134,7 +161,9 @@ export default function App() {
   const navLinks = ["Research", "Publications", "Team", "Collaborators", "Contact"];
 
   return (
+    
     <div style={{ fontFamily: "'DM Sans', sans-serif", background: BG, color: "#111", overflowX: "hidden" }}>
+      {!loaded && <Loader onComplete={() => setLoaded(true)} />}
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap');
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -343,7 +372,7 @@ export default function App() {
           <SectionTitle>Selected Publications</SectionTitle>
         </Reveal>
         <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
-          {PUBLICATIONS.map((p, i) => (
+          {publications.map((p, i) => (
             <Reveal key={i} delay={i * 35}>
               <a href={p.url} target="_blank" rel="noreferrer" style={{
                 display: "flex", gap: "1rem", alignItems: "flex-start",
@@ -380,7 +409,7 @@ export default function App() {
           gridTemplateColumns: isMobile ? "1fr 1fr" : "repeat(3, 1fr)",
           gap: "0.875rem",
         }}>
-          {TEAM.map((m, i) => (
+          {team.map((m, i) => (
             <Reveal key={i} delay={i * 55}>
               <div style={{
                 background: BG, borderRadius: 12,
@@ -420,7 +449,7 @@ export default function App() {
           gridTemplateColumns: isMobile ? "1fr 1fr" : isTablet ? "repeat(3, 1fr)" : "repeat(4, 1fr)",
           gap: "0.75rem",
         }}>
-          {COLLABS.map((c, i) => (
+          {collaborators.map((c, i) => (
             <Reveal key={i} delay={i * 35}>
               <div style={{
                 background: "#fff", border: `1.5px solid ${BORDER}`,
