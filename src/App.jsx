@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import Loader from "./Loader";
-import { client } from './sanityClient'
+
 
 
 function useBreakpoint() {
@@ -84,12 +84,15 @@ function Tag({ text }) {
   );
 }
 const TEAM = [
-  { name: "Lab Director", role: "Principal Investigator · IIT Bombay", initials: "PI", color: "#2563c4" },
+  { name: "Arjun Bhagoji", role: "Principal Investigator · IIT Bombay", initials: "AB", color: "#2563c4", photo: "/arjun.jpg", photoPos: "center 20%" },
   { name: "Rahul Kumar Yadav", role: "PhD · with Parthe Pandit", initials: "RY", color: "#16a34a" },
-  { name: "Nachiketa Patil", role: "MS by Research", initials: "NP", color: "#9333ea" },
-  { name: "Ritik", role: "MS by Research · with Arpit Agarwal", initials: "Ri", color: "#dc2626" },
+  { name: "Lavinia Nongbri", role: "PhD", initials: "LN", color: "#db2777", photo: "/lavinia.jpg", photoPos: "center 20%" },
+  { name: "Nachiketa Patil", role: "MS by Research", initials: "NP", color: "#9333ea", photo: "/Nachiketa.jpg", photoPos: "center 20%" },
+  { name: "Ritik", role: "MS by Research · with Arpit Agarwal", initials: "Ri", color: "#dc2626", photo: "/Ritik.jpg", photoPos: "center 20%" },
+  { name: "Sravani Gunnu", role: "MS by Research", initials: "SG", color: "#0891b2", photo: "/Sravani.jpg", photoPos: "center 20%" },
   { name: "Tunir Ghosh", role: "Pre-doc · with Parthe Pandit", initials: "TG", color: "#0891b2" },
-  { name: "Hari Krishna Sahoo", role: "Dual Degree", initials: "HK", color: "#d97706" },
+  { name: "Prarabdh Shukla", role: "Pre-doc", initials: "PS", color: "#d97706", photo: "/Prarabdh.jpg", photoPos: "center 30%" },
+  { name: "Ansamit Mitra", role: "B.Tech.", initials: "AM", color: "#16a34a" },
 ];
 
 const PUBLICATIONS = [
@@ -115,33 +118,13 @@ const COLLABS = [
 ];
 /* ─── App ─── */
 export default function App() {
- 
-useEffect(() => {
-  client.fetch(`*[_type == "teamMember"]`)
-    .then(data => { if (data.length) setTeam(data) })
-
-  client.fetch(`*[_type == "publication"] | order(year desc)`)
-    .then(data => { if (data.length) setPublications(data) })
-
-  client.fetch(`*[_type == "collaborator"]`)
-    .then(data => { if (data.length) setCollaborators(data) })
-}, [])
   const [loaded, setLoaded] = useState(false);
   const { isMobile, isTablet } = useBreakpoint();
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [team, setTeam] = useState(TEAM)
-const [publications, setPublications] = useState(PUBLICATIONS)
-const [collaborators, setCollaborators] = useState(COLLABS)
-
-useEffect(() => {
-  client.fetch(`*[_type == "teamMember"]`)
-    .then(data => { if (data.length) setTeam(data) })
-  client.fetch(`*[_type == "publication"] | order(year desc)`)
-    .then(data => { if (data.length) setPublications(data) })
-  client.fetch(`*[_type == "collaborator"]`)
-    .then(data => { if (data.length) setCollaborators(data) })
-}, [])
+  const team = TEAM;
+  const publications = PUBLICATIONS;
+  const collaborators = COLLABS;
 
   useEffect(() => {
     const fn = () => setScrolled(window.scrollY > 30);
@@ -244,19 +227,19 @@ useEffect(() => {
       </header>
 
       <section id="hero" style={{
-        minHeight: "100vh", display: "flex", alignItems: "center",
-        padding: isMobile ? "100px 5% 60px" : "80px 5% 0",
-        position: "relative", overflow: "hidden",
+        minHeight: "40vh", display: "flex", alignItems: "center", justifyContent: "center",
+        padding: isMobile ? "100px 5% 60px" : "80px 5% 60px",
+        position: "relative", overflow: "hidden", textAlign: "center",
       }}>
         <div style={{
           position: "absolute", inset: 0, pointerEvents: "none",
           backgroundImage: `linear-gradient(${BORDER}55 1px, transparent 1px), linear-gradient(90deg, ${BORDER}55 1px, transparent 1px)`,
-          backgroundSize: "52px 52px",
+          backgroundSize: "36px 36px",
         }} />
         <div style={{
-          position: "absolute", width: 600, height: 600,
+          position: "absolute", width: 400, height: 400,
           background: "radial-gradient(circle, rgba(37,99,196,0.07) 0%, transparent 65%)",
-          top: 0, right: isMobile ? "-30%" : "-5%", pointerEvents: "none",
+          top: "10%", left: "50%", transform: "translateX(-50%)", pointerEvents: "none",
         }} />
 
         <div style={{ maxWidth: 720, position: "relative", zIndex: 1, width: "100%" }}>
@@ -279,18 +262,18 @@ useEffect(() => {
           }}>
             Intelligent,{" "}
             <em style={{ color: BLUE }}>Robust</em>
-            {isMobile ? " " : <br />}
-            &amp; Honest Systems
+            {" "}&amp; Honest Systems
           </h1>
 
           <p style={{
             fontSize: isMobile ? "0.95rem" : "1.05rem",
             color: MUTED, lineHeight: 1.8, maxWidth: 560, marginBottom: "2rem",
+            margin: "0 auto 2rem",
           }}>
             We build machine learning systems that everyone can trust. Equitable and reliable access to AI is integral to cultivating broad-based societal trust in a technology as transformative as machine learning.
           </p>
 
-          <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap", marginBottom: "3rem" }}>
+          <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap", marginBottom: "3rem", justifyContent: "center" }}>
             <button onClick={() => scrollTo("research")} style={{
               padding: "0.72rem 1.6rem", background: BLUE, color: "white",
               border: "none", borderRadius: 100, cursor: "pointer",
@@ -313,6 +296,7 @@ useEffect(() => {
             display: "flex", gap: "1rem", flexWrap: "wrap",
             fontSize: "0.78rem", color: "#999", alignItems: "center",
             paddingTop: "1.5rem", borderTop: `1px solid ${BORDER}`,
+            justifyContent: "center",
           }}>
             <span>Supported by</span>
             <strong style={{ color: "#444" }}>SBI Foundation</strong>
@@ -406,29 +390,42 @@ useEffect(() => {
         </Reveal>
         <div style={{
           display: "grid",
-          gridTemplateColumns: isMobile ? "1fr 1fr" : "repeat(3, 1fr)",
+          gridTemplateColumns: isMobile ? "1fr 1fr" : isTablet ? "repeat(3, 1fr)" : "repeat(4, 1fr)",
           gap: "0.875rem",
         }}>
           {team.map((m, i) => (
             <Reveal key={i} delay={i * 55}>
               <div style={{
-                background: BG, borderRadius: 12,
-                padding: "1.4rem 1rem", textAlign: "center",
+                borderRadius: 12, overflow: "hidden",
+                position: "relative", aspectRatio: "3/4",
+                background: m.photo ? "transparent" : m.color,
                 border: "1.5px solid transparent",
-                transition: "transform 0.2s, box-shadow 0.2s, border-color 0.2s",
-                height: "100%",
+                transition: "transform 0.2s, box-shadow 0.2s",
               }}
-                onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-3px)"; e.currentTarget.style.boxShadow = "0 8px 24px rgba(0,0,0,0.07)"; e.currentTarget.style.borderColor = BORDER; }}
-                onMouseLeave={e => { e.currentTarget.style.transform = "none"; e.currentTarget.style.boxShadow = "none"; e.currentTarget.style.borderColor = "transparent"; }}
+                onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-3px)"; e.currentTarget.style.boxShadow = "0 8px 24px rgba(0,0,0,0.15)"; }}
+                onMouseLeave={e => { e.currentTarget.style.transform = "none"; e.currentTarget.style.boxShadow = "none"; }}
               >
+                {m.photo ? (
+                  <img src={m.photo} alt={m.name} style={{
+                    width: "100%", height: "100%",
+                    objectFit: "cover", objectPosition: m.photoPos || "center 20%",
+                    display: "block",
+                  }} />
+                ) : (
+                  <div style={{
+                    width: "100%", height: "100%",
+                    display: "flex", alignItems: "center", justifyContent: "center",
+                    fontFamily: serif, fontSize: "2.5rem", color: "white", fontStyle: "italic",
+                  }}>{m.initials}</div>
+                )}
                 <div style={{
-                  width: 50, height: 50, borderRadius: "50%", background: m.color,
-                  margin: "0 auto 0.875rem", display: "flex", alignItems: "center",
-                  justifyContent: "center", fontFamily: serif,
-                  fontSize: "1rem", color: "white", fontStyle: "italic",
-                }}>{m.initials}</div>
-                <div style={{ fontSize: "0.85rem", fontWeight: 600, marginBottom: "0.25rem", color: "#111" }}>{m.name}</div>
-                <div style={{ fontSize: "0.72rem", color: "#999", lineHeight: 1.5 }}>{m.role}</div>
+                  position: "absolute", bottom: 0, left: 0, right: 0,
+                  padding: "2rem 0.875rem 0.875rem",
+                  background: "linear-gradient(to top, rgba(0,0,0,0.72) 0%, transparent 100%)",
+                }}>
+                  <div style={{ fontSize: "0.85rem", fontWeight: 600, color: "white", lineHeight: 1.3 }}>{m.name}</div>
+                  <div style={{ fontSize: "0.7rem", color: "rgba(255,255,255,0.7)", marginTop: "0.2rem" }}>{m.role}</div>
+                </div>
               </div>
             </Reveal>
           ))}
