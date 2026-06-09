@@ -1,2 +1,7 @@
 import { Code } from "../components/Code";
-export default function CodePage() { return <Code />; }
+import { usePageTitle } from "../hooks/usePageTitle";
+
+export default function CodePage() {
+  usePageTitle("Code");
+  return <Code />;
+}

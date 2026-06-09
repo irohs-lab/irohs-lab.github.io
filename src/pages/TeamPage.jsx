@@ -1,2 +1,7 @@
 import { Team } from "../components/Team";
-export default function TeamPage() { return <Team />; }
+import { usePageTitle } from "../hooks/usePageTitle";
+
+export default function TeamPage() {
+  usePageTitle("Team");
+  return <Team />;
+}

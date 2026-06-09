@@ -5,11 +5,13 @@ import { SectionTitle } from "./ui/SectionTitle";
 
 export function Code() {
   const [repos, setRepos] = useState([]);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     fetch("https://api.github.com/orgs/irohs-lab/repos?sort=updated&per_page=12")
-      .then(r => r.json())
-      .then(data => { if (Array.isArray(data)) setRepos(data); });
+      .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(data => { if (Array.isArray(data)) setRepos(data); else throw new Error("unexpected"); })
+      .catch(() => setError(true));
   }, []);
 
   return (
@@ -18,7 +20,9 @@ export function Code() {
         <SectionLabel text="Open source" />
         <SectionTitle>Code</SectionTitle>
       </Reveal>
-      {repos.length === 0 ? (
+      {error ? (
+        <p className="text-center text-[#bbb] text-sm py-8">Could not load repositories. Check back later.</p>
+      ) : repos.length === 0 ? (
         <p className="text-center text-[#bbb] text-sm py-8">Loading repositories…</p>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 tablet:grid-cols-3 gap-3">

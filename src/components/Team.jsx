@@ -21,37 +21,16 @@ function MemberCard({ m }) {
       <div className="p-3.5">
         <div className="font-semibold text-sm text-gray-900 leading-snug">{m.name}</div>
         <div className="text-xs text-[#666] mt-0.5 leading-snug">{m.role}</div>
-        {m.linkedin && (
-          <a href={m.linkedin} target="_blank" rel="noreferrer"
-            className="inline-flex items-center gap-1 mt-2 text-[0.65rem] font-semibold text-lab-blue hover:underline">
-            <LinkedInIcon /> LinkedIn
-          </a>
-        )}
-      </div>
-    </div>
-  );
-}
-
-function FacultyCard({ m }) {
-  return (
-    <div className="flex flex-col bg-[#fafaf8] border border-lab-border rounded-xl overflow-hidden hover:border-lab-blue transition-colors hover:shadow-sm max-w-xs mx-auto">
-      <div className="w-full h-72">
-        {m.photo
-          ? <img src={m.photo} alt={m.name} className="w-full h-full object-cover" style={{ objectPosition: "center 10%" }}></img>
-          : <div className="w-full h-full flex items-center justify-center font-serif text-2xl italic text-white" style={{ background: m.color }}>{m.initials}</div>
-        }
-      </div>
-      <div className="p-4">
-        <div className="font-serif text-lg font-semibold text-gray-900 mb-0.5">{m.name}</div>
-        <div className="text-sm text-[#666] mb-3">{m.role}</div>
-        <div className="flex gap-2 flex-wrap">
-          <a href="https://arjunbhagoji.com" target="_blank" rel="noreferrer"
-            className="text-xs font-semibold text-lab-blue border border-lab-blue px-2.5 py-0.5 rounded-full hover:bg-lab-blue hover:text-white transition-colors">
-            Website ↗
-          </a>
+        <div className="flex gap-2 flex-wrap mt-2">
+          {m.website && (
+            <a href={m.website} target="_blank" rel="noreferrer"
+              className="text-[0.65rem] font-semibold text-lab-blue border border-lab-blue px-2 py-0.5 rounded-full hover:bg-lab-blue hover:text-white transition-colors">
+              Website ↗
+            </a>
+          )}
           {m.linkedin && (
             <a href={m.linkedin} target="_blank" rel="noreferrer"
-              className="inline-flex items-center gap-1 text-xs font-semibold text-lab-blue border border-lab-blue px-2.5 py-0.5 rounded-full hover:bg-lab-blue hover:text-white transition-colors">
+              className="inline-flex items-center gap-1 text-[0.65rem] font-semibold text-lab-blue hover:underline">
               <LinkedInIcon /> LinkedIn
             </a>
           )}
@@ -78,18 +57,6 @@ export function Team() {
 
         {groups.map(g => {
           const members = TEAM.filter(m => m.group === g);
-
-          if (g === "Faculty") {
-            return (
-              <div key={g} className="mb-10">
-                <Reveal>
-                  <div className="text-[0.68rem] font-bold tracking-[0.12em] uppercase text-[#999] text-center mb-4">{g}</div>
-                </Reveal>
-                {members.map(m => <FacultyCard key={m.name} m={m} />)}
-              </div>
-            );
-          }
-
           return (
             <div key={g} className="mb-10">
               <Reveal>

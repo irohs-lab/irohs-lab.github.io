@@ -31,7 +31,7 @@ export const RESEARCH = [
 ];
 
 export const TEAM = [
-  { name: "Arjun Bhagoji", role: "Principal Investigator · IIT Bombay", group: "Faculty", initials: "AB", color: "#2563c4", photo: "/arjun.jpg", photoPos: "center 20%", linkedin: "https://linkedin.com" },
+  { name: "Arjun Bhagoji", role: "Principal Investigator · IIT Bombay", group: "Faculty", initials: "AB", color: "#2563c4", photo: "/arjun.jpg", photoPos: "center 20%", linkedin: "https://linkedin.com",website: "https://arjunbhagoji.github.io" },
   { name: "Rahul Kumar Yadav", role: "PhD · with Parthe Pandit", group: "PhD Students", initials: "RY", color: "#16a34a", photo: "/Rahul.png", photoPos: "center 20%", linkedin: "https://linkedin.com" },
   { name: "Lavinia Nongbri", role: "PhD", group: "PhD Students", initials: "LN", color: "#db2777", photo: "/lavinia.jpg", photoPos: "center 20%", linkedin: "https://linkedin.com" },
   { name: "Nachiketa Patil", role: "MS by Research", group: "MS by Research", initials: "NP", color: "#9333ea", photo: "/Nachiketa.jpg", photoPos: "center 20%", linkedin: "https://linkedin.com" },
@@ -44,13 +44,12 @@ export const TEAM = [
 
 export const PUBLICATIONS = [
   { year: "2025", title: "Adapting to Evolving Adversaries with Regularized Continual Robust Training", venue: "ArXiv preprint", url: "https://arxiv.org/abs/2502.04248" },
-  { year: "2024", title: '"Community Guidelines Make this the Best Party on the Internet": An In-Depth Study of Online Platforms Content Moderation Policies', venue: "CHI 2024", url: "https://dl.acm.org/doi/full/10.1145/3613904.3642333" },
-  { year: "2024", title: "Reliability of Distributed Machine Learning Systems", venue: "ArXiv preprint", url: "https://arxiv.org/abs/2410.08432" },
-  { year: "2024", title: "Zero-Auxiliary-Knowledge Attacks in Privacy-Preserving ML", venue: "ACM KDD 2024", url: "https://dl.acm.org/doi/abs/10.1145/3639037" },
-  { year: "2024", title: "Augmenting Rule-based DNS Censorship Detection at Scale with Machine Learning", venue: "ACM KDD 2024", url: "https://dl.acm.org/doi/abs/10.1145/3639037" },
+  { year: "2024", title: '"Community Guidelines Make this the Best Party on the Internet": An In-Depth Study of Online Platforms\' Content Moderation Policies', venue: "CHI 2024", url: "https://dl.acm.org/doi/full/10.1145/3613904.3642333" },
+  { year: "2024", title: "MYCROFT: Towards Effective and Efficient External Data Augmentation", venue: "ArXiv preprint", url: "https://arxiv.org/abs/2410.08432" },
+  { year: "2024", title: "NetDiffusion: Network Data Augmentation Through Protocol-Constrained Traffic Generation", venue: "ACM KDD 2024", url: "https://dl.acm.org/doi/abs/10.1145/3639037" },
   { year: "2022", title: "Understanding Robust Learning through the Lens of Representation Similarities", venue: "NeurIPS 2022", url: "https://proceedings.neurips.cc/paper_files/paper/2022/hash/e1fa017a312368906411501bbd27a1d6-Abstract-Conference.html" },
   { year: "2021", title: "Lower Bounds on Cross-Entropy Loss in the Presence of Test-time Adversaries", venue: "ICML 2021", url: "https://proceedings.mlr.press/v139/bhagoji21a.html" },
-  { year: "2019", title: "Lower Bounds on Adversarial Robustness from Optimal Transport", venue: "NeurIPS 2019", url: "https://proceedings.neurips.cc/paper_files/paper/2019/hash/8f85517967795eeef66c225f7883bdcb-Abstract.html" },
+  { year: "2019", title: "Lower Bounds on Adversarial Robustness from Optimal Transport", venue: "NeurIPS 2019", url: "https://proceedings.neurips.cc/paper/2019/hash/02bf86214e264535e3412283e817deaa-Abstract.html" },
   { year: "2018", title: "PAC-learning in the presence of adversaries", venue: "NeurIPS 2018", url: "https://proceedings.neurips.cc/paper/2018/hash/8f85517967795eeef66c225f7883bdcb-Abstract.html" },
   { year: "2018", title: "Practical Black-box Attacks on Deep Neural Networks using Efficient Query Mechanisms", venue: "ECCV 2018", url: "https://openaccess.thecvf.com/content_ECCV_2018/html/Arjun_Nitin_Bhagoji_Practical_Black-box_Attacks_ECCV_2018_paper.html" },
 ];

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Reveal } from "../components/ui/Reveal";
 import { RESEARCH, PUBLICATIONS } from "../constants";
+import { usePageTitle } from "../hooks/usePageTitle";
 
 function PubRef({ pub }) {
   return (
@@ -21,6 +22,7 @@ function PubRef({ pub }) {
 }
 
 export default function Home() {
+  usePageTitle(null);
   return (
     <>
       {/* ── HERO ── */}

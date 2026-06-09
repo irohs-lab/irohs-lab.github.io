@@ -1,2 +1,7 @@
 import { Publications } from "../components/Publications";
-export default function PublicationsPage() { return <Publications />; }
+import { usePageTitle } from "../hooks/usePageTitle";
+
+export default function PublicationsPage() {
+  usePageTitle("Publications");
+  return <Publications />;
+}

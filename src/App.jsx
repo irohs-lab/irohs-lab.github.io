@@ -5,9 +5,18 @@ import { Layout } from "./components/Layout";
 import Home from "./pages/Home";
 import PublicationsPage from "./pages/PublicationsPage";
 import TeamPage from "./pages/TeamPage";
-import CollaboratorsPage from "./pages/CollaboratorsPage";
 import CodePage from "./pages/CodePage";
-import ContactPage from "./pages/ContactPage";
+
+function NotFound() {
+  return (
+    <div className="flex flex-col items-center justify-center min-h-[60vh] text-center px-[5%]">
+      <div className="font-serif text-[4rem] text-lab-blue mb-3">404</div>
+      <h1 className="font-serif text-2xl text-gray-900 mb-2">Page not found</h1>
+      <p className="text-sm text-lab-muted mb-6">The page you're looking for doesn't exist.</p>
+      <a href="/" className="text-sm font-semibold text-lab-blue hover:underline">← Back to home</a>
+    </div>
+  );
+}
 
 export default function App() {
   const [loaded, setLoaded] = useState(false);
@@ -21,9 +30,8 @@ export default function App() {
           <Route path="/"             element={<Home />} />
           <Route path="/publications" element={<PublicationsPage />} />
           <Route path="/team"         element={<TeamPage />} />
-          <Route path="/collaborators"element={<CollaboratorsPage />} />
           <Route path="/code"         element={<CodePage />} />
-          <Route path="/contact"      element={<ContactPage />} />
+          <Route path="*"             element={<NotFound />} />
         </Routes>
       </Layout>
     </HashRouter>
