@@ -2,7 +2,7 @@
   "name": "irohs-web",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://irohs-lab.github.io/irohs-lab",
+  "homepage": "https://irohs-lab.github.io",
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.9.1",
