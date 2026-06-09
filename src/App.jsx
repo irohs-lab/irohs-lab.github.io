@@ -69,7 +69,7 @@ function SectionTitle({ children }) {
     <h2 style={{
       fontFamily: serif, fontSize: "clamp(1.7rem, 3.5vw, 2.4rem)",
       letterSpacing: "-0.02em", lineHeight: 1.1, color: "#111",
-      margin: "0 0 2rem 0",
+      margin: "0 0 2rem 0", textAlign: "center",
     }}>{children}</h2>
   );
 }
@@ -84,26 +84,28 @@ function Tag({ text }) {
   );
 }
 const TEAM = [
-  { name: "Arjun Bhagoji", role: "Principal Investigator · IIT Bombay", initials: "AB", color: "#2563c4", photo: "/arjun.jpg", photoPos: "center 20%" },
-  { name: "Rahul Kumar Yadav", role: "PhD · with Parthe Pandit", initials: "RY", color: "#16a34a" },
-  { name: "Lavinia Nongbri", role: "PhD", initials: "LN", color: "#db2777", photo: "/lavinia.jpg", photoPos: "center 20%" },
-  { name: "Nachiketa Patil", role: "MS by Research", initials: "NP", color: "#9333ea", photo: "/Nachiketa.jpg", photoPos: "center 20%" },
-  { name: "Ritik", role: "MS by Research · with Arpit Agarwal", initials: "Ri", color: "#dc2626", photo: "/Ritik.jpg", photoPos: "center 20%" },
-  { name: "Sravani Gunnu", role: "MS by Research", initials: "SG", color: "#0891b2", photo: "/Sravani.jpg", photoPos: "center 20%" },
-  { name: "Tunir Ghosh", role: "Pre-doc · with Parthe Pandit", initials: "TG", color: "#0891b2" },
-  { name: "Prarabdh Shukla", role: "Pre-doc", initials: "PS", color: "#d97706", photo: "/Prarabdh.jpg", photoPos: "center 30%" },
-  { name: "Ansamit Mitra", role: "B.Tech.", initials: "AM", color: "#16a34a" },
+  { name: "Arjun Bhagoji", role: "Principal Investigator · IIT Bombay", group: "Faculty", initials: "AB", color: "#2563c4", photo: "/arjun.jpg", photoPos: "center 20%" },
+  { name: "Rahul Kumar Yadav", role: "PhD · with Parthe Pandit", group: "PhD Students", initials: "RY", color: "#16a34a",photo: "/Rahul.png", photoPos: "center 20%" },
+  { name: "Lavinia Nongbri", role: "PhD", group: "PhD Students", initials: "LN", color: "#db2777", photo: "/lavinia.jpg", photoPos: "center 20%" },
+  { name: "Nachiketa Patil", role: "MS by Research", group: "MS by Research", initials: "NP", color: "#9333ea", photo: "/Nachiketa.jpg", photoPos: "center 20%" },
+  { name: "Ritik", role: "MS by Research · with Arpit Agarwal", group: "MS by Research", initials: "Ri", color: "#dc2626", photo: "/Ritik.jpg", photoPos: "center 20%" },
+  { name: "Sravani Gunnu", role: "MS by Research", group: "MS by Research", initials: "SG", color: "#0891b2", photo: "/Sravani.jpg", photoPos: "center 20%" },
+  { name: "Tunir Ghosh", role: "Pre-doc · with Parthe Pandit", group: "Pre-doc", initials: "TG", color: "#0891b2" },
+  { name: "Prarabdh Shukla", role: "Pre-doc", group: "Pre-doc", initials: "PS", color: "#d97706", photo: "/Prarabdh.jpg", photoPos: "center 30%" },
+  { name: "Ansamit Mitra", role: "B.Tech.", group: "B.Tech.", initials: "AM", color: "#16a34a" ,photo: "/anasmit.jpg", photoPos: "center 20%"},
 ];
 
 const PUBLICATIONS = [
-  { year: "2025", title: "Practical Black-Box Attacks on ML Systems in Physical-World Settings", venue: "ArXiv preprint", url: "https://arxiv.org/abs/2502.04248" },
-  { year: "2024", title: "Regulation and Compliance of Deployed Machine Learning Models", venue: "CHI 2024", url: "https://dl.acm.org/doi/full/10.1145/3613904.3642333" },
+  { year: "2025", title: "Adapting to Evolving Adversaries with Regularized Continual Robust Training", venue: "ArXiv preprint", url: "https://arxiv.org/abs/2502.04248" },
+  { year: "2024", title: '"Community Guidelines Make this the Best Party on the Internet": An In-Depth Study of Online Platforms Content Moderation Policies', venue: "CHI 2024", url: "https://dl.acm.org/doi/full/10.1145/3613904.3642333" },
   { year: "2024", title: "Reliability of Distributed Machine Learning Systems", venue: "ArXiv preprint", url: "https://arxiv.org/abs/2410.08432" },
   { year: "2024", title: "Zero-Auxiliary-Knowledge Attacks in Privacy-Preserving ML", venue: "ACM KDD 2024", url: "https://dl.acm.org/doi/abs/10.1145/3639037" },
-  { year: "2023", title: "Machine Learning Models in Security-Critical Domains", venue: "KDD 2023", url: "https://dl.acm.org/doi/abs/10.1145/3580305.3599775" },
-  { year: "2022", title: "Kernel Machines for Interpretable and Robust Classification", venue: "NeurIPS 2022", url: "https://proceedings.neurips.cc/paper_files/paper/2022/hash/e1fa017a312368906411501bbd27a1d6-Abstract-Conference.html" },
-  { year: "2021", title: "Backdoor Attacks Against Deep Learning Systems in the Physical World", venue: "CVPR 2021", url: "https://openaccess.thecvf.com/content/CVPR2021/html/Wenger_Backdoor_Attacks_Against_Deep_Learning_Systems_in_the_Physical_World_CVPR_2021_paper.html" },
-  { year: "2019", title: "Byzantine-Robust Distributed SGD with Optimal Statistical Rates", venue: "ICML 2019", url: "https://proceedings.mlr.press/v97/bhagoji19a.html" },
+  { year: "2024", title: "Augmenting Rule-based DNS Censorship Detection at Scale with Machine Learning", venue: "ACM KDD 2024", url: "https://dl.acm.org/doi/abs/10.1145/3639037" },
+  { year: "2022", title: "Understanding Robust Learning through the Lens of Representation Similarities", venue: "NeurIPS 2022", url: "https://proceedings.neurips.cc/paper_files/paper/2022/hash/e1fa017a312368906411501bbd27a1d6-Abstract-Conference.html" },
+  { year: "2021", title: "  Lower Bounds on Cross-Entropy Loss in the Presence of Test-time Adversaries", url: "https://proceedings.mlr.press/v139/bhagoji21a.html" },
+  { year: "2019", title: "Lower Bounds on Adversarial Robustness from Optimal Transport", venue: "NeurIPS 2019", url: "https://proceedings.neurips.cc/paper_files/paper/2019/hash/8f85517967795eeef66c225f7883bdcb-Abstract.html" },
+  { year: "2018", title: "PAC-learning in the presence of adversaries", venue: "NeurIPS 2018", url: "https://proceedings.neurips.cc/paper/2018/hash/8f85517967795eeef66c225f7883bdcb-Abstract.html" },
+  { year: "2018", title: "Practical Black-box Attacks on Deep Neural Networks using Efficient Query Mechanisms", venue: "ICML 2019", url: "https://openaccess.thecvf.com/content_ECCV_2018/html/Arjun_Nitin_Bhagoji_Practical_Black-box_Attacks_ECCV_2018_paper.html" },
 ];
 
 const COLLABS = [
@@ -388,48 +390,70 @@ export default function App() {
           <SectionLabel text="Who we are" />
           <SectionTitle>Current Members</SectionTitle>
         </Reveal>
-        <div style={{
-          display: "grid",
-          gridTemplateColumns: isMobile ? "1fr 1fr" : isTablet ? "repeat(3, 1fr)" : "repeat(4, 1fr)",
-          gap: "0.875rem",
-        }}>
-          {team.map((m, i) => (
-            <Reveal key={i} delay={i * 55}>
-              <div style={{
-                borderRadius: 12, overflow: "hidden",
-                position: "relative", aspectRatio: "3/4",
-                background: m.photo ? "transparent" : m.color,
-                border: "1.5px solid transparent",
-                transition: "transform 0.2s, box-shadow 0.2s",
-              }}
-                onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-3px)"; e.currentTarget.style.boxShadow = "0 8px 24px rgba(0,0,0,0.15)"; }}
-                onMouseLeave={e => { e.currentTarget.style.transform = "none"; e.currentTarget.style.boxShadow = "none"; }}
-              >
-                {m.photo ? (
-                  <img src={m.photo} alt={m.name} style={{
-                    width: "100%", height: "100%",
-                    objectFit: "cover", objectPosition: m.photoPos || "center 20%",
-                    display: "block",
-                  }} />
-                ) : (
+        {(() => {
+          const groups = [];
+          const seen = {};
+          team.forEach(m => {
+            if (!seen[m.group]) { seen[m.group] = true; groups.push(m.group); }
+          });
+          return groups.map(g => {
+            const members = team.filter(m => m.group === g);
+            return (
+              <div key={g} style={{ marginBottom: "2.5rem" }}>
+                <Reveal>
                   <div style={{
-                    width: "100%", height: "100%",
-                    display: "flex", alignItems: "center", justifyContent: "center",
-                    fontFamily: serif, fontSize: "2.5rem", color: "white", fontStyle: "italic",
-                  }}>{m.initials}</div>
-                )}
+                    fontSize: "0.72rem", fontWeight: 700, letterSpacing: "0.12em",
+                    textTransform: "uppercase", color: "#999",
+                    marginBottom: "1rem", textAlign: "center",
+                  }}>{g}</div>
+                </Reveal>
                 <div style={{
-                  position: "absolute", bottom: 0, left: 0, right: 0,
-                  padding: "2rem 0.875rem 0.875rem",
-                  background: "linear-gradient(to top, rgba(0,0,0,0.72) 0%, transparent 100%)",
+                  display: "flex", flexWrap: "wrap",
+                  gap: "0.875rem",
+                  justifyContent: "center",
                 }}>
-                  <div style={{ fontSize: "0.85rem", fontWeight: 600, color: "white", lineHeight: 1.3 }}>{m.name}</div>
-                  <div style={{ fontSize: "0.7rem", color: "rgba(255,255,255,0.7)", marginTop: "0.2rem" }}>{m.role}</div>
+                  {members.map((m, i) => (
+                    <Reveal key={m.name} delay={i * 55}>
+                      <div style={{
+                        width: isMobile ? "calc(50vw - 1.5rem)" : "220px",
+                        borderRadius: 12, overflow: "hidden",
+                        position: "relative", aspectRatio: "3/4",
+                        background: m.photo ? "transparent" : m.color,
+                        border: "1.5px solid transparent",
+                        transition: "transform 0.2s, box-shadow 0.2s",
+                      }}
+                        onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-3px)"; e.currentTarget.style.boxShadow = "0 8px 24px rgba(0,0,0,0.15)"; }}
+                        onMouseLeave={e => { e.currentTarget.style.transform = "none"; e.currentTarget.style.boxShadow = "none"; }}
+                      >
+                        {m.photo ? (
+                          <img src={m.photo} alt={m.name} style={{
+                            width: "100%", height: "100%",
+                            objectFit: "cover", objectPosition: m.photoPos || "center 20%",
+                            display: "block",
+                          }} />
+                        ) : (
+                          <div style={{
+                            width: "100%", height: "100%",
+                            display: "flex", alignItems: "center", justifyContent: "center",
+                            fontFamily: serif, fontSize: "2.5rem", color: "white", fontStyle: "italic",
+                          }}>{m.initials}</div>
+                        )}
+                        <div style={{
+                          position: "absolute", bottom: 0, left: 0, right: 0,
+                          padding: "2rem 0.875rem 0.875rem",
+                          background: "linear-gradient(to top, rgba(0,0,0,0.72) 0%, transparent 100%)",
+                        }}>
+                          <div style={{ fontSize: "0.85rem", fontWeight: 600, color: "white", lineHeight: 1.3 }}>{m.name}</div>
+                          <div style={{ fontSize: "0.7rem", color: "rgba(255,255,255,0.7)", marginTop: "0.2rem" }}>{m.role}</div>
+                        </div>
+                      </div>
+                    </Reveal>
+                  ))}
                 </div>
               </div>
-            </Reveal>
-          ))}
-        </div>
+            );
+          });
+        })()}
       </section>
 
       {/* ── COLLABORATORS ── */}
