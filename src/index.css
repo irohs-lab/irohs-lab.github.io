@@ -4,7 +4,7 @@
 
 @layer base {
   *, *::before, *::after { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; font-size: 19px; }
   a { text-decoration: none; color: inherit; }
   button { font-family: inherit; }
   ::selection { background: #2563c4; color: white; }

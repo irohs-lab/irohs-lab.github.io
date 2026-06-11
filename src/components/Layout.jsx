@@ -118,12 +118,10 @@ export function Layout({ children }) {
           <div className="text-center sm:text-left">
             <div className="text-[0.65rem] font-semibold uppercase tracking-[0.12em] text-white/30 mb-4">Contact</div>
             <div className="flex flex-col gap-2 text-xs text-white/40 leading-relaxed items-center sm:items-start">
-              <span>Dept. of Electrical Engineering</span>
-              <span>IIT Bombay, Powai</span>
-              <span>Mumbai — 400076, India</span>
-              <a href="mailto:arjun.bhagoji@iitb.ac.in"
+              <span>C-MInDS, IIT Mumbai</span>
+              <a href="mailto:arjunp@iitb.ac.in"
                 className="text-[#6b9fff] hover:text-white transition-colors mt-1">
-                arjun.bhagoji@iitb.ac.in
+                arjunp@iitb.ac.in
               </a>
             </div>
           </div>

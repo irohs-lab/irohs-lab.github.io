@@ -31,15 +31,17 @@ export const RESEARCH = [
 ];
 
 export const TEAM = [
-  { name: "Arjun Bhagoji", role: "Principal Investigator · IIT Bombay", group: "Faculty", initials: "AB", color: "#2563c4", photo: "/arjun.jpg", photoPos: "center 20%", linkedin: "https://linkedin.com",website: "https://arjunbhagoji.github.io" },
-  { name: "Rahul Kumar Yadav", role: "PhD · with Parthe Pandit", group: "PhD Students", initials: "RY", color: "#16a34a", photo: "/Rahul.png", photoPos: "center 20%", linkedin: "https://linkedin.com" },
-  { name: "Lavinia Nongbri", role: "PhD", group: "PhD Students", initials: "LN", color: "#db2777", photo: "/lavinia.jpg", photoPos: "center 20%", linkedin: "https://linkedin.com" },
-  { name: "Nachiketa Patil", role: "MS by Research", group: "MS by Research", initials: "NP", color: "#9333ea", photo: "/Nachiketa.jpg", photoPos: "center 20%", linkedin: "https://linkedin.com" },
-  { name: "Ritik", role: "MS by Research · with Arpit Agarwal", group: "MS by Research", initials: "Ri", color: "#dc2626", photo: "/Ritik.jpg", photoPos: "center 20%", linkedin: "https://linkedin.com" },
-  { name: "Sravani Gunnu", role: "MS by Research", group: "MS by Research", initials: "SG", color: "#0891b2", photo: "/Sravani.jpg", photoPos: "center 20%", linkedin: "https://linkedin.com" },
-  { name: "Tunir Ghosh", role: "Pre-doc · with Parthe Pandit", group: "Pre-doc", initials: "TG", color: "#0891b2", linkedin: "https://linkedin.com" },
-  { name: "Prarabdh Shukla", role: "Pre-doc", group: "Pre-doc", initials: "PS", color: "#d97706", photo: "/Prarabdh.jpg", photoPos: "center 30%", linkedin: "https://linkedin.com" },
-  { name: "Ansamit Mitra", role: "B.Tech.", group: "B.Tech.", initials: "AM", color: "#16a34a", photo: "/anasmit.jpg", photoPos: "center 20%", linkedin: "https://linkedin.com" },
+  { name: "Arjun Bhagoji", role: "Principal Investigator · IIT Bombay", group: "Faculty", initials: "AB", color: "#2563c4", photo: "/arjun.jpg", photoPos: "center 20%", linkedin: "https://www.linkedin.com/in/arjun-bhagoji-18617944/",website: "https://arjunbhagoji.github.io" },
+  { name: "Rahul Kumar Yadav", role: "PhD · with Parthe Pandit", group: "PhD Students", initials: "RY", color: "#16a34a", photo: "/Rahul.png", photoPos: "center 20%", linkedin: "https://www.linkedin.com/in/rahul-kumar-yadav-5275521bb/" },
+  { name: "Lavinia Nongbri", role: "PhD", group: "PhD Students", initials: "LN", color: "#db2777", photo: "/lavinia.jpg", photoPos: "center 20%", linkedin: "https://www.linkedin.com/in/lavinia-nongbri/" },
+  { name: "Nachiketa Patil", role: "MS by Research", group: "MS by Research", initials: "NP", color: "#9333ea", photo: "/Nachiketa.jpg", photoPos: "center 20%", linkedin: "https://www.linkedin.com/in/nachiketapatil123/" },
+  { name: "Ritik", role: "MS by Research · with Arpit Agarwal", group: "MS by Research", initials: "Ri", color: "#dc2626", photo: "/Ritik.jpg", photoPos: "center 20%", linkedin: "https://www.linkedin.com/in/ritik02/" },
+  { name: "Sravani Gunnu", role: "MS by Research", group: "MS by Research", initials: "SG", color: "#0891b2", photo: "/Sravani.jpg", photoPos: "center 20%", linkedin: "https://www.linkedin.com/in/sravani-gunnu-947073210/" },
+  { name: "Tunir Ghosh", role: "Pre-doc · with Parthe Pandit", group: "Pre-doc", initials: "TG", color: "#0891b2", linkedin: "https://www.linkedin.com/in/tunir-ghosh-b05309224/" },
+  { name: "Prarabdh Shukla", role: "Pre-doc", group: "Pre-doc", initials: "PS", color: "#d97706", photo: "/Prarabdh.jpg", photoPos: "center 30%", linkedin: "https://www.linkedin.com/in/prarabdh-shukla-a51a741bb/" },
+  { name: "Ansamit Mitra", role: "B.Tech.", group: "B.Tech.", initials: "AM", color: "#16a34a", photo: "/anasmit.jpg", photoPos: "center 20%", linkedin: "https://www.linkedin.com/in/anasmit-mitra-14a518286/" },
+  { name: "Hari Krishna Sahoo", role: "MSc", group: "Alumni", initials: "HS", color: "#16a34a", photo: "/Hari.jpeg", photoPos: "center 20%", linkedin: "https://www.linkedin.com/in/hari-krishna-sahoo/" },
+
 ];
 
 export const PUBLICATIONS = [
