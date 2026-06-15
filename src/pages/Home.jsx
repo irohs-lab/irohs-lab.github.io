@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Reveal } from "../components/ui/Reveal";
 import { RESEARCH, PUBLICATIONS } from "../constants";
 import { usePageTitle } from "../hooks/usePageTitle";
+import { NewsScroller } from "../components/News";
 
 function PubRef({ pub }) {
   return (
@@ -65,6 +66,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <NewsScroller />
 
       {/* ── ABOUT ── */}
       <section className="px-[5%] py-14 bg-white">

@@ -39,7 +39,7 @@ export function Layout({ children }) {
             to="/"
             className="font-serif text-xl text-gray-900"
           >
-            IROHS<span className="text-lab-blue">.</span>lab
+            IRoHS<span className="text-lab-blue">.</span>lab
           </Link>
 
           {/* Desktop nav */}
@@ -97,7 +97,7 @@ export function Layout({ children }) {
           {/* Brand + tagline */}
           <div className="max-w-[280px] mx-auto sm:mx-0 text-center sm:text-left">
             <div className="font-serif text-white text-[1.3rem] mb-3 tracking-tight">
-              IROHS<span className="text-[#5b8dee]">.</span>lab
+              IRoHS<span className="text-[#5b8dee]">.</span>lab
             </div>
             <p className="text-xs leading-loose text-white/35 mb-4">
               Building machine learning systems that everyone can trust.

@@ -21,6 +21,15 @@ module.exports = {
         "card-hover": "0 3px 14px rgba(37,99,196,0.09)",
         "card-team":  "0 8px 24px rgba(0,0,0,0.15)",
       },
+      animation: {
+        marquee: "marquee 50s linear infinite",
+      },
+      keyframes: {
+        marquee: {
+          "0%":   { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
+      },
     },
   },
   plugins: [],
