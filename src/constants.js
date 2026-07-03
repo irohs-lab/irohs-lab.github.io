@@ -41,7 +41,7 @@ export const TEAM = [
   { name: "Prarabdh Shukla", role: "Pre-doc", group: "Pre-doc", initials: "PS", color: "#d97706", photo: "/Prarabdh.jpg", photoPos: "center 30%", linkedin: "https://www.linkedin.com/in/prarabdh-shukla-a51a741bb/" },
   { name: "Ansamit Mitra", role: "B.Tech.", group: "B.Tech.", initials: "AM", color: "#16a34a", photo: "/anasmit.png", photoPos: "center 20%", linkedin: "https://www.linkedin.com/in/anasmit-mitra-14a518286/" },
   { name: "Hari Krishna Sahoo", role: "MSc", group: "Alumni", initials: "HS", color: "#16a34a", photo: "/Hari.jpeg", photoPos: "center 20%", linkedin: "https://www.linkedin.com/in/hari-krishna-sahoo/" },
-  { name: "Suhas Rao", role: "MS by Research · with Arpit Agarwal", group: "MS by Research", initials: "SR", color: "#16a34a", photo: "/Suhas.jpg", photoPos: "center 20%", linkedin: "https://www.linkedin.com/in/suhas-rao-a08ba2293/" },
+  { name: "Suhas Rao", role: "MS by Research · with Arpit Agarwal", group: "MS by Research", initials: "SR", color: "#16a34a", photo: "/suhas.jpg", photoPos: "center 20%", linkedin: "https://www.linkedin.com/in/suhas-rao-a08ba2293/" },
   { name: "Sreeranjini TM", role: "PhD · with Sharayu Moharir", group: "PhD Students", initials: "STM", color: "#16a34a", photo: "/sreeranjini.jpg", photoPos: "center 20%", linkedin: "https://www.linkedin.com/in/sreeranjini-t-m-11197a228/" },
   { name: "Nikhil Jha", role: "IDDDP", group: "IDDDP", initials: "NJ", color: "#16a34a", photo: "/nikhil.jpg", photoPos: "center 20%", linkedin: "https://www.linkedin.com/in/nikhil-jha-123456789/" },
 
