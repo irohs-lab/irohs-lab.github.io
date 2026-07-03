@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Reveal } from "./ui/Reveal";
 import { SectionLabel } from "./ui/SectionLabel";
 import { SectionTitle } from "./ui/SectionTitle";
@@ -22,25 +22,41 @@ function formatDate(dateStr) {
 
 export function NewsScroller() {
   const { news, loading } = useNews();
+  const scrollRef = useRef(null);
 
   if (loading || news.length === 0) return null;
 
-  const items = [...news, ...news];
+  const scroll = (dir) => {
+    scrollRef.current?.scrollBy({ left: dir * 296, behavior: "smooth" });
+  };
 
   return (
-    <div className="py-10 bg-lab-bg overflow-hidden">
-      <div className="px-[5%] mb-5">
+    <div className="py-10 bg-lab-bg">
+      <div className="px-[5%] mb-5 flex items-center justify-between">
         <span className="text-[0.68rem] font-bold tracking-[0.14em] uppercase text-lab-blue">
           Latest News
         </span>
+        <div className="flex gap-2">
+          <button
+            onClick={() => scroll(-1)}
+            aria-label="Scroll left"
+            className="w-8 h-8 rounded-full border border-lab-border bg-white flex items-center justify-center text-[#555] hover:border-lab-blue hover:text-lab-blue transition-colors"
+          >
+            ←
+          </button>
+          <button
+            onClick={() => scroll(1)}
+            aria-label="Scroll right"
+            className="w-8 h-8 rounded-full border border-lab-border bg-white flex items-center justify-center text-[#555] hover:border-lab-blue hover:text-lab-blue transition-colors"
+          >
+            →
+          </button>
+        </div>
       </div>
 
-      <div className="overflow-hidden">
-        <div
-          className="flex gap-4 animate-marquee hover:[animation-play-state:paused]"
-          style={{ width: "max-content" }}
-        >
-          {items.map((item, i) => (
+      <div ref={scrollRef} className="overflow-x-auto scrollbar-none" style={{ scrollbarWidth: "none" }}>
+        <div className="flex gap-4 px-[5%] pb-1">
+          {news.map((item, i) => (
             <div
               key={i}
               className="w-[280px] shrink-0 bg-white border border-lab-border rounded-[10px] p-4 flex flex-col gap-2.5 hover:border-lab-blue hover:shadow-card-hover transition-all"

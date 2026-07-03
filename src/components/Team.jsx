@@ -18,10 +18,10 @@ function MemberCard({ m }) {
           : <div className="w-full h-full flex items-center justify-center font-serif text-2xl italic text-white" style={{ background: m.color }}>{m.initials}</div>
         }
       </div>
-      <div className="p-3.5">
+      <div className="p-3.5 flex flex-col flex-1">
         <div className="font-semibold text-sm text-gray-900 leading-snug">{m.name}</div>
         <div className="text-xs text-[#666] mt-0.5 leading-snug">{m.role}</div>
-        <div className="flex gap-2 flex-wrap mt-2">
+        <div className="flex gap-2 flex-wrap mt-auto pt-2 items-center">
           {m.website && (
             <a href={m.website} target="_blank" rel="noreferrer"
               className="text-[0.65rem] font-semibold text-lab-blue border border-lab-blue px-2 py-0.5 rounded-full hover:bg-lab-blue hover:text-white transition-colors">
