@@ -1,8 +1,17 @@
 import { useEffect, useState } from "react";
 
+function getInitialDark() {
+  try {
+    const saved = localStorage.getItem("theme");
+    if (saved) return saved === "dark";
+    return false;
+  } catch { return false; }
+}
+
 export default function Loader({ onComplete }) {
   const [fading, setFading] = useState(false);
   const [hidden, setHidden] = useState(false);
+  const isDark = getInitialDark();
 
   useEffect(() => {
     const fadeTimer = setTimeout(() => setFading(true), 3500);
@@ -18,7 +27,7 @@ export default function Loader({ onComplete }) {
   return (
     <div style={{
       position: "fixed", inset: 0,
-      background: "#f8f7f3",
+      background: isDark ? "#0f1117" : "#f8f7f3", /* dark-bg / lab-bg */
       display: "flex", alignItems: "center", justifyContent: "center",
       flexDirection: "column",
       zIndex: 9999,

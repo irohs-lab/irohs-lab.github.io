@@ -11,7 +11,7 @@ const LinkedInIcon = () => (
 
 function MemberCard({ m }) {
   return (
-    <div className="flex flex-col bg-[#fafaf8] border border-lab-border rounded-xl overflow-hidden hover:border-lab-blue transition-colors hover:shadow-sm w-[220px]">
+    <div className="flex flex-col bg-[#fafaf8] dark:bg-dark-surface border border-lab-border dark:border-dark-border rounded-xl overflow-hidden hover:border-lab-blue transition-colors hover:shadow-sm w-[220px]">
       <div className="w-full h-64 flex-shrink-0">
         {m.photo
           ? <img src={m.photo} alt={m.name} className="w-full h-full object-cover" style={{ objectPosition: m.photoPos || "center 20%" }} />
@@ -19,8 +19,8 @@ function MemberCard({ m }) {
         }
       </div>
       <div className="p-3.5 flex flex-col flex-1">
-        <div className="font-semibold text-sm text-gray-900 leading-snug">{m.name}</div>
-        <div className="text-xs text-[#666] mt-0.5 leading-snug">{m.role}</div>
+        <div className="font-semibold text-sm text-gray-900 dark:text-gray-100 leading-snug">{m.name}</div>
+        <div className="text-xs text-[#666] dark:text-[#999] mt-0.5 leading-snug">{m.role}</div>
         <div className="flex gap-2 flex-wrap mt-auto pt-2 items-center">
           {m.website && (
             <a href={m.website} target="_blank" rel="noreferrer"
@@ -49,7 +49,7 @@ export function Team() {
 
   return (
     <>
-      <section id="team" className="py-16 px-[5%] bg-white">
+      <section id="team" className="py-16 px-[5%] bg-white dark:bg-dark-bg">
         <Reveal>
           <SectionLabel text="Who we are" />
           <SectionTitle>Current Members</SectionTitle>
@@ -60,7 +60,7 @@ export function Team() {
           return (
             <div key={g} className="mb-10">
               <Reveal>
-                <div className="text-[0.68rem] font-bold tracking-[0.12em] uppercase text-[#999] text-center mb-4">{g}</div>
+                <div className="text-[0.68rem] font-bold tracking-[0.12em] uppercase text-[#999] dark:text-[#666] text-center mb-4">{g}</div>
               </Reveal>
               <div className="flex flex-wrap justify-center gap-3">
                 {members.map(m => (
@@ -72,7 +72,7 @@ export function Team() {
         })}
       </section>
 
-      <section id="collaborators" className="py-16 px-[5%] bg-lab-bg">
+      <section id="collaborators" className="py-16 px-[5%] bg-lab-bg dark:bg-dark-mid">
         <Reveal>
           <SectionLabel text="Global network" />
           <SectionTitle>Collaborators</SectionTitle>
@@ -80,9 +80,9 @@ export function Team() {
         <div className="grid grid-cols-1 sm:grid-cols-2 tablet:grid-cols-3 lg:grid-cols-4 gap-3">
           {COLLABS.map((c, i) => (
             <Reveal key={i} delay={i * 35}>
-              <div className="bg-white border border-lab-border rounded-[10px] p-3.5 hover:border-lab-blue transition-colors">
-                <div className="text-sm font-semibold text-gray-900 mb-0.5">{c.name}</div>
-                <div className="text-xs text-[#999]">{c.inst}</div>
+              <div className="bg-white dark:bg-dark-surface border border-lab-border dark:border-dark-border rounded-[10px] p-3.5 hover:border-lab-blue transition-colors">
+                <div className="text-sm font-semibold text-gray-900 dark:text-gray-100 mb-0.5">{c.name}</div>
+                <div className="text-xs text-[#999] dark:text-[#666]">{c.inst}</div>
               </div>
             </Reveal>
           ))}

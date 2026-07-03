@@ -17,6 +17,11 @@
       linear-gradient(90deg, #e5e0d855 1px, transparent 1px);
     background-size: 36px 36px;
   }
+  .dark .hero-grid {
+    background-image:
+      linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+  }
   .card-overlay {
     background: linear-gradient(to top, rgba(0,0,0,0.72) 0%, transparent 100%);
   }

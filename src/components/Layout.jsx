@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useBreakpoint } from "../hooks/useBreakpoint";
+import { useDarkMode } from "../hooks/useDarkMode";
 
 const NAV = [
   { label: "Research",     path: "/" },
@@ -9,9 +10,27 @@ const NAV = [
   { label: "Code",         path: "/code" },
 ];
 
+function SunIcon() {
+  return (
+    <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="5"/>
+      <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+    </svg>
+  );
+}
+
+function MoonIcon() {
+  return (
+    <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+    </svg>
+  );
+}
+
 export function Layout({ children }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [dark, setDark] = useDarkMode();
   const { isMobile } = useBreakpoint();
   const location = useLocation();
 
@@ -28,17 +47,14 @@ export function Layout({ children }) {
     path === "/" ? location.pathname === "/" : location.pathname === path;
 
   return (
-    <div className="font-sans bg-lab-bg text-gray-900 overflow-x-hidden min-h-screen flex flex-col">
+    <div className="font-sans bg-lab-bg dark:bg-dark-bg text-gray-900 dark:text-gray-100 overflow-x-hidden min-h-screen flex flex-col transition-colors duration-200">
       <header className={`fixed top-0 inset-x-0 z-[300] transition-all duration-300 ${
         scrolled || menuOpen
-          ? "bg-lab-bg/95 backdrop-blur-md border-b border-lab-border"
+          ? "bg-lab-bg/95 dark:bg-dark-bg/95 backdrop-blur-md border-b border-lab-border dark:border-dark-border"
           : "border-b border-transparent"
       }`}>
         <div className="flex items-center justify-between px-[5%] h-[60px]">
-          <Link
-            to="/"
-            className="font-serif text-xl text-gray-900"
-          >
+          <Link to="/" className="font-serif text-xl text-gray-900 dark:text-gray-100">
             IRoHS<span className="text-lab-blue">.</span>lab
           </Link>
 
@@ -49,7 +65,7 @@ export function Layout({ children }) {
                 key={l.path}
                 to={l.path}
                 className={`text-sm font-medium transition-colors ${
-                  active(l.path) ? "text-lab-blue" : "text-[#555] hover:text-lab-blue"
+                  active(l.path) ? "text-lab-blue" : "text-[#555] dark:text-[#aaa] hover:text-lab-blue dark:hover:text-lab-blue"
                 }`}
               >
                 {l.label}
@@ -57,29 +73,40 @@ export function Layout({ children }) {
             ))}
           </nav>
 
-          {/* Hamburger */}
-          <button
-            onClick={() => setMenuOpen(o => !o)}
-            className="flex sm:hidden flex-col gap-[5px] p-1 bg-transparent border-none cursor-pointer"
-            aria-label="Toggle menu"
-          >
-            <span className="w-[22px] h-0.5 bg-gray-900 rounded-sm block transition-transform duration-300"
-              style={{ transform: menuOpen ? "rotate(45deg) translate(5px,5px)" : "none" }} />
-            <span className="w-[22px] h-0.5 bg-gray-900 rounded-sm block transition-opacity duration-300"
-              style={{ opacity: menuOpen ? 0 : 1 }} />
-            <span className="w-[22px] h-0.5 bg-gray-900 rounded-sm block transition-transform duration-300"
-              style={{ transform: menuOpen ? "rotate(-45deg) translate(5px,-5px)" : "none" }} />
-          </button>
+          <div className="flex items-center gap-2">
+            {/* Dark mode toggle */}
+            <button
+              onClick={() => setDark(d => !d)}
+              aria-label="Toggle dark mode"
+              className="w-8 h-8 flex items-center justify-center rounded-full text-[#555] dark:text-[#aaa] hover:text-lab-blue dark:hover:text-lab-blue transition-colors"
+            >
+              {dark ? <SunIcon /> : <MoonIcon />}
+            </button>
+
+            {/* Hamburger */}
+            <button
+              onClick={() => setMenuOpen(o => !o)}
+              className="flex sm:hidden flex-col gap-[5px] p-1 bg-transparent border-none cursor-pointer"
+              aria-label="Toggle menu"
+            >
+              <span className="w-[22px] h-0.5 bg-gray-900 dark:bg-gray-100 rounded-sm block transition-transform duration-300"
+                style={{ transform: menuOpen ? "rotate(45deg) translate(5px,5px)" : "none" }} />
+              <span className="w-[22px] h-0.5 bg-gray-900 dark:bg-gray-100 rounded-sm block transition-opacity duration-300"
+                style={{ opacity: menuOpen ? 0 : 1 }} />
+              <span className="w-[22px] h-0.5 bg-gray-900 dark:bg-gray-100 rounded-sm block transition-transform duration-300"
+                style={{ transform: menuOpen ? "rotate(-45deg) translate(5px,-5px)" : "none" }} />
+            </button>
+          </div>
         </div>
 
         {/* Mobile menu */}
         {menuOpen && (
-          <nav className="sm:hidden px-[5%] pb-5 pt-2 border-t border-lab-border flex flex-col">
+          <nav className="sm:hidden px-[5%] pb-5 pt-2 border-t border-lab-border dark:border-dark-border flex flex-col">
             {NAV.map(l => (
-              <div key={l.path} className="border-b border-lab-border">
+              <div key={l.path} className="border-b border-lab-border dark:border-dark-border">
                 <Link
                   to={l.path}
-                  className="block w-full text-base font-medium text-gray-700 py-3"
+                  className="block w-full text-base font-medium text-gray-700 dark:text-gray-300 py-3"
                 >
                   {l.label}
                 </Link>

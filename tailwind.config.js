@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: "class",
   content: ["./src/**/*.{js,jsx}"],
   theme: {
     extend: {
@@ -9,6 +10,11 @@ module.exports = {
         "lab-border":     "#e5e0d8",
         "lab-muted":      "#666666",
         "lab-bg":         "#f8f7f3",
+        "dark-bg":        "#0f1117",
+        "dark-mid":       "#151820",
+        "dark-surface":   "#1a1d26",
+        "dark-border":    "#272c3d",
+        "dark-blue-tint": "#1a2e5a",
       },
       fontFamily: {
         sans:  ['"DM Sans"',          "ui-sans-serif", "sans-serif"],
