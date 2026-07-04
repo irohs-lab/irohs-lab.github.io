@@ -20,6 +20,7 @@ export default function Loader({ onComplete }) {
       onComplete?.();
     }, 4300);
     return () => { clearTimeout(fadeTimer); clearTimeout(hideTimer); };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (hidden) return null;
