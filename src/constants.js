@@ -46,7 +46,7 @@ export const TEAM = [
   // PhD Students
   { name: "Rahul Kumar Yadav", role: "PhD · with Parthe Pandit",                       group: "PhD Students",   initials: "RY",  color: "#16a34a", photo: "/Rahul.png",       photoPos: "center 20%", linkedin: "https://www.linkedin.com/in/rahul-kumar-yadav-5275521bb/" },
   { name: "Lavinia Nongbri",   role: "PhD",                                             group: "PhD Students",   initials: "LN",  color: "#db2777", photo: "/lavinia.jpg",     photoPos: "center 20%", linkedin: "https://www.linkedin.com/in/lavinia-nongbri/" },
-  { name: "Sreeranjini TM",    role: "PhD · with Sharayu Moharir",                     group: "PhD Students",   initials: "STM", color: "#16a34a", photo: "/sreeranjini.jpg", photoPos: "center 20%", linkedin: "https://www.linkedin.com/in/sreeranjini-t-m-11197a228/" },
+  { name: "Sreeranjini T M",    role: "PhD · with Sharayu Moharir",                     group: "PhD Students",   initials: "STM", color: "#16a34a", photo: "/sreeranjini.jpg", photoPos: "center 20%", linkedin: "https://www.linkedin.com/in/sreeranjini-t-m-11197a228/" },
   // MS by Research
   { name: "Nachiketa Patil",   role: "MS by Research",                                  group: "MS by Research", initials: "NP",  color: "#9333ea", photo: "/Nachiketa.jpg",   photoPos: "center 20%", linkedin: "https://www.linkedin.com/in/nachiketapatil123/" },
   { name: "Ritik",             role: "MS by Research · with Arpit Agarwal",             group: "MS by Research", initials: "Ri",  color: "#dc2626", photo: "/Ritik.jpg",       photoPos: "center 20%", linkedin: "https://www.linkedin.com/in/ritik02/" },
@@ -54,12 +54,15 @@ export const TEAM = [
   { name: "Suhas Rao",         role: "MS by Research · with Arpit Agarwal",             group: "MS by Research", initials: "SR",  color: "#16a34a", photo: "/suhas.jpg",       photoPos: "center 20%", linkedin: "https://www.linkedin.com/in/suhas-rao-a08ba2293/" },
   // Pre-doc
   { name: "Tunir Ghosh",       role: "Pre-doc · with Arpit Agarwal and Parthe Pandit", group: "Pre-doc",        initials: "TG",  color: "#0891b2", photo: null,               photoPos: "center 20%", linkedin: "https://www.linkedin.com/in/tunir-ghosh-b05309224/" },
-  { name: "Prarabdh Shukla",   role: "Pre-doc",                                         group: "Pre-doc",        initials: "PS",  color: "#d97706", photo: "/Prarabdh.jpg",    photoPos: "center 30%", linkedin: "https://www.linkedin.com/in/prarabdh-shukla-a51a741bb/" },
   // IDDDP
   { name: "Nikhil Jha",        role: "IDDDP",                                           group: "IDDDP",          initials: "NJ",  color: "#16a34a", photo: "/nikhil.jpg",      photoPos: "center 20%", linkedin: "https://www.linkedin.com/in/nikhil-jha-81809230b" },
   // B.Tech.
   { name: "Ansamit Mitra",     role: "B.Tech.",                                         group: "B.Tech.",        initials: "AM",  color: "#16a34a", photo: "/anasmit.png",     photoPos: "center 20%", linkedin: "https://www.linkedin.com/in/anasmit-mitra-14a518286/" },
+  { name: "Raheel Agarwal",    role: "B.Tech.",                                         group: "B.Tech.",        initials: "RA",  color: "#9333ea", photo: null,               photoPos: "center 20%" },
+  { name: "Krisha Biradar",    role: "B.Tech.",                                         group: "B.Tech.",        initials: "KB",  color: "#db2777", photo: null,               photoPos: "center 20%" },
+  { name: "Manasvi BA",        role: "B.Tech.",                                         group: "B.Tech.",        initials: "MBA", color: "#0891b2", photo: null,               photoPos: "center 20%" },
   // Alumni
+  { name: "Prarabdh Shukla",   role: "Pre-doc",                                         group: "Alumni",         initials: "PS",  color: "#d97706", photo: "/Prarabdh.jpg",    photoPos: "center 30%", linkedin: "https://www.linkedin.com/in/prarabdh-shukla-a51a741bb/" },
   { name: "Hari Krishna Sahoo", role: "MSc",                                            group: "Alumni",         initials: "HS",  color: "#16a34a", photo: "/Hari.jpeg",       photoPos: "center 20%", linkedin: "https://www.linkedin.com/in/hari-krishna-sahoo/" },
 ];
 

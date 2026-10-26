@@ -53,6 +53,7 @@ const publications = entries.map((entry) => ({
   venue: cleanBibtex(
     entry.entryTags.journal ||
     entry.entryTags.booktitle ||
+    entry.entryTags.howpublished ||
     ""
   ),
   url: entry.entryTags.url || "",

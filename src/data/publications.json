@@ -467,7 +467,52 @@
     "doi": ""
   },
   {
-    "id": "DBLP:journals/corr/abs-2503-22663",
+    "id": "DBLP:journals/corr/abs-2608-10120",
+    "title": "ChronoSSM: Training for Temporally Aware Representations in Autoregressive State Space Models",
+    "authors": [
+      "Adrien Schoen",
+      "Nachiketa Ratnakar Patil",
+      "Arjun Nitin Bhagoji",
+      "Francesco Bronzino"
+    ],
+    "year": 2026,
+    "venue": "CoRR",
+    "url": "https://doi.org/10.48550/arXiv.2608.10120",
+    "doi": "10.48550/ARXIV.2608.10120"
+  },
+  {
+    "id": "DBLP:journals/corr/abs-2606-26936",
+    "title": "Jailbreaking for the Average Jane: Choosing Optimal Jailbreaks via Bandit Algorithms for Automatically Enhanced Queries",
+    "authors": [
+      "Prarabdh Shukla",
+      "Ritik",
+      "Suhas Rao",
+      "Arpit Agarwal",
+      "Arjun Nitin Bhagoji"
+    ],
+    "year": 2026,
+    "venue": "CoRR",
+    "url": "https://doi.org/10.48550/arXiv.2606.26936",
+    "doi": "10.48550/ARXIV.2606.26936"
+  },
+  {
+    "id": "patent-us-19336926",
+    "title": "Diffusion-Based Network Traffic Generation",
+    "authors": [
+      "Nick Feamster",
+      "Francesco Bronzino",
+      "Xi Jiang",
+      "Shinan Liu",
+      "Arjun Nitin Bhagoji",
+      "Paul Schmitt"
+    ],
+    "year": 2026,
+    "venue": "US Patent Application 19/336,926",
+    "url": "https://patents.google.com/patent/US20260089070A1/en",
+    "doi": ""
+  },
+  {
+    "id": "DBLP:journals/pacmnet/ChuJLBBSF26",
     "title": "NetSSM: Multi-Flow and State-Aware Network Trace Generation using State-Space Models",
     "authors": [
       "Andrew Chu",
@@ -478,10 +523,10 @@
       "Paul Schmitt",
       "Nick Feamster"
     ],
-    "year": 2025,
-    "venue": "CoRR",
-    "url": "https://doi.org/10.48550/arXiv.2503.22663",
-    "doi": "10.48550/ARXIV.2503.22663"
+    "year": 2026,
+    "venue": "Proceedings of the ACM on Networking, Volume 4, Issue CoNEXT1",
+    "url": "https://doi.org/10.1145/3786289",
+    "doi": "10.1145/3786289"
   },
   {
     "id": "DBLP:journals/corr/abs-2410-08432",
@@ -671,6 +716,139 @@
     "year": 2017,
     "venue": "CoRR",
     "url": "http://arxiv.org/abs/1712.09491",
+    "doi": ""
+  },
+  {
+    "id": "foci-2024-calle",
+    "title": "Toward Automated DNS Tampering Detection Using Machine Learning",
+    "authors": [
+      "Paola Calle",
+      "Larissa Savitsky",
+      "Arjun Nitin Bhagoji",
+      "Nguyen Phong Hoang",
+      "Shinyoung Cho"
+    ],
+    "year": 2024,
+    "venue": "Free and Open Communications on the Internet (FOCI)",
+    "url": "https://petsymposium.org/foci/2024/foci-2024-0008.php",
+    "doi": ""
+  },
+  {
+    "id": "chapter-2024-chakraborty",
+    "title": "Assessing Vulnerabilities and Securing Federated Learning",
+    "authors": [
+      "Supriyo Chakraborty",
+      "Arjun Nitin Bhagoji"
+    ],
+    "year": 2024,
+    "venue": "Federated Learning, Academic Press, pp. 75-90",
+    "url": "https://www.sciencedirect.com/science/article/pii/B9780443190377000120",
+    "doi": ""
+  },
+  {
+    "id": "advml-frontiers-2023-bhagoji",
+    "title": "A Theoretical Perspective on the Robustness of Feature Extractors",
+    "authors": [
+      "Arjun Nitin Bhagoji",
+      "Daniel Cullina",
+      "Ben Y. Zhao"
+    ],
+    "year": 2023,
+    "venue": "The Second Workshop on New Frontiers in Adversarial Machine Learning",
+    "url": "https://openreview.net/forum?id=uHkhh6AsSI",
+    "doi": ""
+  },
+  {
+    "id": "encyclopedia-2020-bhagoji",
+    "title": "Adversarial Attacks on Anomaly Detection",
+    "authors": [
+      "Arjun Nitin Bhagoji",
+      "Paria Shirani"
+    ],
+    "year": 2020,
+    "venue": "Encyclopedia of Machine Learning and Data Science",
+    "url": "",
+    "doi": ""
+  },
+  {
+    "id": "secml-2018-bhagoji",
+    "title": "Model Poisoning Attacks in Federated Learning",
+    "authors": [
+      "Arjun Nitin Bhagoji",
+      "Supriyo Chakraborty",
+      "Prateek Mittal",
+      "Seraphin Calo"
+    ],
+    "year": 2018,
+    "venue": "Workshop on Security in Machine Learning (SecML), NeurIPS 2018",
+    "url": "",
+    "doi": ""
+  },
+  {
+    "id": "arxiv-1804-00866",
+    "title": "On the Local Equivalence of 2D Color Codes and Surface Codes with Applications",
+    "authors": [
+      "Arun B. Aloshious",
+      "Arjun Nitin Bhagoji",
+      "Pradeep Kiran Sarvepalli"
+    ],
+    "year": 2018,
+    "venue": "CoRR",
+    "url": "https://arxiv.org/abs/1804.00866",
+    "doi": ""
+  },
+  {
+    "id": "hotsec-2017-bhagoji",
+    "title": "Optimus Prime: Linear Transformations to Secure Machine Learning Systems",
+    "authors": [
+      "Arjun Nitin Bhagoji"
+    ],
+    "year": 2017,
+    "venue": "USENIX Summit on Hot Topics in Security (HotSec '17)",
+    "url": "https://www.usenix.org/conference/hotsec17/conference-program/presentation/bhagoji",
+    "doi": ""
+  },
+  {
+    "id": "isit-2015-bhagoji",
+    "title": "Equivalence of 2D Color Codes (Without Translational Symmetry) to Surface Codes",
+    "authors": [
+      "Arjun Nitin Bhagoji",
+      "Pradeep Kiran Sarvepalli"
+    ],
+    "year": 2015,
+    "venue": "2015 IEEE International Symposium on Information Theory (ISIT), pp. 1109-1113",
+    "url": "https://ieeexplore.ieee.org/document/7282627",
+    "doi": ""
+  },
+  {
+    "id": "thesis-2015-bhagoji",
+    "title": "Equivalence of Color Codes and Surface Codes",
+    "authors": [
+      "Arjun Nitin Bhagoji"
+    ],
+    "year": 2015,
+    "venue": "Thesis, Indian Institute of Technology Madras",
+    "url": "https://arjunbhagoji.github.io/files/ee10b053.pdf",
+    "doi": ""
+  },
+  {
+    "id": "arxiv-1411-6034",
+    "title": "A Nano-satellite Mission to Study Charged Particle Precipitation from the Van Allen Radiation Belts caused due to Seismo-Electromagnetic Emissions",
+    "authors": [
+      "Nithin Sivadas",
+      "Akshay Gulati",
+      "Deepti Kannapan",
+      "Ananth Saran Yalamarthy",
+      "Ankit Dhiman",
+      "Arjun Nitin Bhagoji",
+      "Athreya Shankar",
+      "Nitin Prasad",
+      "Harishankar Ramachandran",
+      "R. David Koilpillai"
+    ],
+    "year": 2014,
+    "venue": "CoRR",
+    "url": "https://arxiv.org/abs/1411.6034",
     "doi": ""
   }
 ]
