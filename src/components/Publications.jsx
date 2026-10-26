@@ -1,5 +1,4 @@
 import { Reveal } from "./ui/Reveal";
-import { SectionLabel } from "./ui/SectionLabel";
 import { SectionTitle } from "./ui/SectionTitle";
 import { PubCard } from "./ui/PubCard";
 import publications from "../data/publications.json";
@@ -17,7 +16,6 @@ export function Publications() {
   return (
     <section id="publications" className="py-16 px-[5%] bg-lab-bg dark:bg-dark-bg">
       <Reveal>
-        <SectionLabel text="Recent work" />
         <SectionTitle>Publications</SectionTitle>
       </Reveal>
 
